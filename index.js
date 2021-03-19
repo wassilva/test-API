@@ -9,6 +9,7 @@
     var port = 8000;
 
     app.use(bodyParser.json())
+    app.use(logger('tiny'));
 
     app.get('/hello/:foo/:bar', (req, res) => {
         res.json({message: 'Hello BSCBest!', data:[
@@ -19,7 +20,12 @@
     
            
     });
-            
+        
+    // post request
+    app.post('/hello', (req, res) =>{
+        res.json({result: 'Post was sent', data: req.body});
+
+    });
   
 
        
