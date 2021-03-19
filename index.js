@@ -10,6 +10,7 @@
 
     app.use(bodyParser.json())
     app.use(logger('tiny'));
+    app.use(require('./routes'));
 
     app.get('/hello/:foo/:bar', (req, res) => {
         res.json({message: 'Hello BSCBest!', data:[
@@ -27,9 +28,6 @@
 
     });
   
-
-       
-
 
    // http.createServer((req, res)=>{
     //  res.write(users.join("\n")); // write a response >> display tge list of user on the page.
